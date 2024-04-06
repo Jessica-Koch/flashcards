@@ -1,0 +1,18 @@
+html,
+body,
+#root {
+  background-color: $white;
+  color: $black;
+  font-family: 'JetBrains Mono', monospace;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
