@@ -3,16 +3,9 @@
   perspective: 1260px;
   position: absolute;
   width: 400px;
-
-  opacity: 0;
-  display: none;
   transform-origin: top left;
+  display: none;
   transform: translateX(100vw);
-
-  transition:
-    display 0.5s 0.3s ease-out allow-discrete,
-    opacity 0.5s 0.2s ease-out,
-    transform 0.5s ease-out;
 }
 
 .flashCard {
@@ -22,22 +15,28 @@
   transform-style: preserve-3d;
   border-radius: 70px;
   background-color: $white;
-  overflow: hidden;
   transform-origin: center right;
   transition: transform 0.5s ease-out;
+
+  .borders {
+    z-index: 2;
+    box-shadow:
+      inset 0px 0px 0px 2px $black,
+      inset 0px 0px 0px 12px $blue,
+      inset 0px 0px 0px 14px $black,
+      inset 0px 0px 0px 24px $yellow,
+      inset 0px 0px 0px 26px $black,
+      inset 0px 0px 0px 36px $pink,
+      inset 0px 0px 0px 38px $black;
+    padding: 37px;
+  }
 }
 
-.borders {
-  z-index: 2;
-  box-shadow:
-    inset 0px 0px 0px 2px $black,
-    inset 0px 0px 0px 12px $blue,
-    inset 0px 0px 0px 14px $black,
-    inset 0px 0px 0px 24px $yellow,
-    inset 0px 0px 0px 26px $black,
-    inset 0px 0px 0px 36px $pink,
-    inset 0px 0px 0px 38px $black;
-  padding: 65px;
+.cardContent {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .cardFace {
@@ -49,20 +48,18 @@
 }
 
 .back {
-  transform: rotateY(180deg) translateZ(1px);
-  background-color: $white;
   align-items: center;
+  background-color: $white;
   border-radius: 10px;
   color: $black;
   display: grid;
+  transform: rotateY(180deg) translateZ(1px);
   grid-template-rows: 3fr 2fr;
-
   justify-content: center;
-  overflow: visible;
   padding: 15px;
-  // perspective-origin: center center;
   position: relative;
 }
+
 .success {
   .icon,
   .floatingIcons {
@@ -113,7 +110,6 @@
   display: flex;
   left: 25px;
   right: 25px;
-
   justify-content: space-between;
 }
 
@@ -155,15 +151,12 @@
 }
 
 .slideOut {
-  transform: translateX(-100vw);
-  opacity: 0;
-  display: none;
+  animation: slideout 1s ease-in forwards;
 }
 
 .slideIn {
   display: flex;
-  opacity: 1;
-  transform: translateX(0vw);
+  animation: slidein 1s ease-in forwards;
 }
 
 .flipped {
@@ -180,4 +173,38 @@
   position: absolute;
   right: -92px;
   top: 63px;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    display: none;
+  }
+
+  10% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+
+  to {
+    display: flex;
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes slideout {
+  from {
+    transform: translateX(0vw);
+    opacity: 1;
+    display: flex;
+  }
+
+  90% {
+    transform: translateX(-110vw);
+  }
+
+  to {
+    display: none;
+    opacity: 0;
+  }
 }
