@@ -1,0 +1,54 @@
+.nestedCircles {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+.red {
+  box-shadow:
+    inset 0px 0px 0px 1px $red,
+    inset 0px 0px 0px 24px $white,
+    inset 0px 0px 0px 25px $red,
+    inset 0px 0px 0px 51px $white,
+    inset 0px 0px 0px 52px $red;
+}
+.orange {
+  box-shadow:
+    inset 0px 0px 0px 1px $orange,
+    inset 0px 0px 0px 24px $white,
+    inset 0px 0px 0px 25px $orange,
+    inset 0px 0px 0px 51px $white,
+    inset 0px 0px 0px 52px $orange;
+}
+.yellow {
+  box-shadow:
+    inset 0px 0px 0px 1px $brightYellow,
+    inset 0px 0px 0px 24px $white,
+    inset 0px 0px 0px 25px $brightYellow,
+    inset 0px 0px 0px 51px $white,
+    inset 0px 0px 0px 52px $brightYellow;
+}
+.green {
+  box-shadow:
+    inset 0px 0px 0px 1px $green,
+    inset 0px 0px 0px 24px $white,
+    inset 0px 0px 0px 25px $green,
+    inset 0px 0px 0px 51px $white,
+    inset 0px 0px 0px 52px $green;
+}
+.blue {
+  box-shadow:
+    inset 0px 0px 0px 1px $darkBlue,
+    inset 0px 0px 0px 24px $white,
+    inset 0px 0px 0px 25px $darkBlue,
+    inset 0px 0px 0px 51px $white,
+    inset 0px 0px 0px 52px $darkBlue;
+}
+.purple {
+  box-shadow:
+    inset 0px 0px 0px 1px $purple,
+    inset 0px 0px 0px 24px $white,
+    inset 0px 0px 0px 25px $purple,
+    inset 0px 0px 0px 51px $white,
+    inset 0px 0px 0px 52px $purple;
+}

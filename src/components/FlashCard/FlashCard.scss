@@ -1,0 +1,179 @@
+.scene {
+  height: 600px;
+  perspective: 1260px;
+  position: absolute;
+  width: 400px;
+
+  opacity: 0;
+  display: none;
+  transform-origin: top left;
+  transform: translateX(100vw);
+}
+
+.flashCard {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: 70px;
+  background-color: $white;
+  // display: grid;
+  // grid-template-rows: 3fr 2fr;
+
+  // overflow: hidden;
+  // perspective-origin: center center;
+  transform-origin: center right;
+
+  transition:
+    display 0.5s 0.3s ease-out allow-discrete,
+    opacity 0.5s 0.2s ease-out,
+    transform 0.5s ease-out;
+}
+
+.borders {
+  z-index: 2;
+  box-shadow:
+    inset 0px 0px 0px 2px $black,
+    inset 0px 0px 0px 12px $blue,
+    inset 0px 0px 0px 14px $black,
+    inset 0px 0px 0px 24px $yellow,
+    inset 0px 0px 0px 26px $black,
+    inset 0px 0px 0px 36px $pink,
+    inset 0px 0px 0px 38px $black;
+  padding: 65px;
+}
+
+.cardFace {
+  border-radius: inherit;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(1px);
+
+  align-items: center;
+  border-radius: 10px;
+  color: $black;
+  display: grid;
+  grid-template-rows: 3fr 2fr;
+
+  justify-content: center;
+  overflow: visible;
+  padding: 15px;
+  // perspective-origin: center center;
+  position: relative;
+}
+.success {
+  .icon,
+  .floatingIcons {
+    color: $green;
+  }
+  .outer {
+    background-color: lighten($green, 40%);
+  }
+  .inner {
+    background-color: lighten($green, 30%);
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer {
+  border-radius: 50%;
+  padding: 25px;
+}
+
+.inner {
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.footer {
+  background: $white;
+  text-align: center;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.floatingIcons {
+  position: absolute;
+  display: flex;
+  left: 25px;
+  right: 25px;
+
+  justify-content: space-between;
+}
+
+.upper {
+  top: 20px;
+}
+
+.lower {
+  bottom: 20px;
+}
+
+.icon {
+  height: 4em;
+  width: 4em;
+}
+
+.iconLarge {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.error {
+  .icon,
+  .floatingIcons {
+    color: $red;
+  }
+
+  .iconLarge {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  .outer {
+    background-color: lighten($red, 30%);
+  }
+
+  .inner {
+    background-color: lighten($red, 20%);
+  }
+}
+
+.slideOut {
+  transform: translateX(-100vw);
+  opacity: 0;
+  display: none;
+}
+
+.slideIn {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0vw);
+}
+
+.flipped {
+  transform: translateX(-100%) rotateY(180deg) translateZ(1px);
+}
+
+.topCircle {
+  bottom: 0;
+  position: absolute;
+}
