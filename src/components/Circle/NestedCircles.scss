@@ -1,54 +1,92 @@
 .nestedCircles {
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   border-radius: 100%;
 }
 
 .red {
-  box-shadow:
-    inset 0px 0px 0px 1px $red,
-    inset 0px 0px 0px 24px $white,
-    inset 0px 0px 0px 25px $red,
-    inset 0px 0px 0px 51px $white,
-    inset 0px 0px 0px 52px $red;
+  background-image: radial-gradient(
+    circle,
+    transparent 48px,
+    $red 49px,
+    transparent 50px,
+    transparent 99px,
+    $red 100px,
+    transparent 101px,
+    transparent 145px,
+    $red 146px,
+    transparent 147px
+  );
 }
 .orange {
-  box-shadow:
-    inset 0px 0px 0px 1px $orange,
-    inset 0px 0px 0px 24px $white,
-    inset 0px 0px 0px 25px $orange,
-    inset 0px 0px 0px 51px $white,
-    inset 0px 0px 0px 52px $orange;
+  background-image: radial-gradient(
+    circle,
+    transparent 48px,
+    $orange 49px,
+    transparent 50px,
+    transparent 99px,
+    $orange 100px,
+    transparent 101px,
+    transparent 145px,
+    $orange 146px,
+    transparent 147px
+  );
 }
 .yellow {
-  box-shadow:
-    inset 0px 0px 0px 1px $brightYellow,
-    inset 0px 0px 0px 24px $white,
-    inset 0px 0px 0px 25px $brightYellow,
-    inset 0px 0px 0px 51px $white,
-    inset 0px 0px 0px 52px $brightYellow;
+  transform: scale(0.75);
+  background-image: radial-gradient(
+    circle,
+    transparent 48px,
+    $yellow 49px,
+    transparent 50px,
+    transparent 99px,
+    $yellow 100px,
+    transparent 101px,
+    transparent 145px,
+    $yellow 146px,
+    transparent 147px
+  );
 }
+
 .green {
-  box-shadow:
-    inset 0px 0px 0px 1px $green,
-    inset 0px 0px 0px 24px $white,
-    inset 0px 0px 0px 25px $green,
-    inset 0px 0px 0px 51px $white,
-    inset 0px 0px 0px 52px $green;
+  background-image: radial-gradient(
+    circle,
+    transparent 48px,
+    $green 49px,
+    transparent 50px,
+    transparent 99px,
+    $green 100px,
+    transparent 101px,
+    transparent 145px,
+    $green 146px,
+    transparent 147px
+  );
 }
 .blue {
-  box-shadow:
-    inset 0px 0px 0px 1px $darkBlue,
-    inset 0px 0px 0px 24px $white,
-    inset 0px 0px 0px 25px $darkBlue,
-    inset 0px 0px 0px 51px $white,
-    inset 0px 0px 0px 52px $darkBlue;
+  background-image: radial-gradient(
+    circle,
+    transparent 48px,
+    $darkBlue 49px,
+    transparent 50px,
+    transparent 99px,
+    $darkBlue 100px,
+    transparent 101px,
+    transparent 145px,
+    $darkBlue 146px,
+    transparent 147px
+  );
 }
 .purple {
-  box-shadow:
-    inset 0px 0px 0px 1px $purple,
-    inset 0px 0px 0px 24px $white,
-    inset 0px 0px 0px 25px $purple,
-    inset 0px 0px 0px 51px $white,
-    inset 0px 0px 0px 52px $purple;
+  background-image: radial-gradient(
+    circle,
+    transparent 48px,
+    $purple 49px,
+    transparent 50px,
+    transparent 99px,
+    $purple 100px,
+    transparent 101px,
+    transparent 145px,
+    $purple 146px,
+    transparent 147px
+  );
 }

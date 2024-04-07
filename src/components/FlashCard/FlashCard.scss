@@ -8,6 +8,11 @@
   display: none;
   transform-origin: top left;
   transform: translateX(100vw);
+
+  transition:
+    display 0.5s 0.3s ease-out allow-discrete,
+    opacity 0.5s 0.2s ease-out,
+    transform 0.5s ease-out;
 }
 
 .flashCard {
@@ -17,17 +22,9 @@
   transform-style: preserve-3d;
   border-radius: 70px;
   background-color: $white;
-  // display: grid;
-  // grid-template-rows: 3fr 2fr;
-
-  // overflow: hidden;
-  // perspective-origin: center center;
+  overflow: hidden;
   transform-origin: center right;
-
-  transition:
-    display 0.5s 0.3s ease-out allow-discrete,
-    opacity 0.5s 0.2s ease-out,
-    transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 .borders {
@@ -53,7 +50,7 @@
 
 .back {
   transform: rotateY(180deg) translateZ(1px);
-
+  background-color: $white;
   align-items: center;
   border-radius: 10px;
   color: $black;
@@ -173,7 +170,14 @@
   transform: translateX(-100%) rotateY(180deg) translateZ(1px);
 }
 
-.topCircle {
-  bottom: 0;
+.bottom {
+  bottom: -84px;
+  left: -50px;
   position: absolute;
+}
+
+.right {
+  position: absolute;
+  right: -92px;
+  top: 63px;
 }

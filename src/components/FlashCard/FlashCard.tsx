@@ -50,7 +50,8 @@ export const FlashCard = ({
       className={`scene ${isActive ? 'slideIn' : ''}  ${isPrevCard ? 'slideOut' : ''} `}
     >
       <div onClick={onclick} className={`flashCard ${isFlipped && 'flipped'}`}>
-        <NestedCircles className='topCircle' color={Color.PURPLE} />
+        <NestedCircles className='bottom' color={Color.PURPLE} />
+        <NestedCircles className='right' color={Color.YELLOW} />
         <div className='cardFace front borders'>
           <h2>{question.question}</h2>
           {question.options.map((opt, i) => (
