@@ -4,6 +4,7 @@ import { FlashCard } from '../FlashCard/FlashCard';
 import './Quiz.scss';
 import { CircleChevronRight, Undo2 } from 'lucide-react';
 import { Button } from '../Button/Button';
+import { RainbowText } from '../RainbowText/RainbowText';
 
 export const Quiz = () => {
   const [activeCardIndex, setActiveCardIndex] = React.useState(0);
@@ -27,7 +28,7 @@ export const Quiz = () => {
   return (
     <div className='quiz'>
       <></>
-      <h1 className='title'>Flashcards!</h1>
+      <RainbowText className='title' text='Flashcards' />
       <h2 className='score'>Your score: {score}</h2>
       <div className='quizQuestions'>
         {QUESTION_BANK.map((q, i) => (

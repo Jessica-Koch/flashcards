@@ -1,0 +1,29 @@
+.rainbowText {
+  .rainbowLetter {
+    -webkit-text-stroke-color: $black;
+    -webkit-text-stroke-fill: $white;
+    -webkit-text-stroke-width: 2px;
+  }
+  span:nth-child(10n + 1),
+  span:nth-child(10n + 7) {
+    text-shadow: 0px 4px $red;
+  }
+  span:nth-child(10n + 2),
+  span:nth-child(10n + 8) {
+    text-shadow: 0px 4px $orange;
+  }
+  span:nth-child(10n + 3),
+  span:nth-child(10n + 9) {
+    text-shadow: 0px 4px $yellow;
+  }
+  span:nth-child(10n + 4),
+  span:nth-child(10n + 10) {
+    text-shadow: 0px 4px $green;
+  }
+  span:nth-child(10n + 5) {
+    text-shadow: 0px 4px $blue;
+  }
+  span:nth-child(10n + 6) {
+    text-shadow: 0px 4px $purple;
+  }
+}

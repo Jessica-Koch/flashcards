@@ -55,16 +55,18 @@ export const FlashCard = ({
             <NestedCircles className='bottom' color={Color.PURPLE} />
             <NestedCircles className='right' color={Color.YELLOW} />
             <h2>{question.question}</h2>
-            {question.options.map((opt, i) => (
-              <div key={`${i}-${opt}`}>
-                <Radio
-                  checked={selectedAnswer === i}
-                  label={opt}
-                  onChange={onCheckAnswer}
-                  value={i}
-                />
-              </div>
-            ))}
+            <div className='options'>
+              {question.options.map((opt, i) => (
+                <div key={`${i}-${opt}`}>
+                  <Radio
+                    checked={selectedAnswer === i}
+                    label={opt}
+                    onChange={onCheckAnswer}
+                    value={i}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className='cardFace back'>
