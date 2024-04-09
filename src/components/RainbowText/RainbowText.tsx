@@ -6,9 +6,11 @@ type RainbowTextProps = {
 };
 
 export const RainbowText = ({ className, text }: RainbowTextProps) => {
-  const createRainbow = text
-    .split('')
-    .map((ch) => <span className='rainbowLetter'>{ch}</span>);
+  const createRainbow = text.split('').map((ch, i) => (
+    <span key={`${ch}-${i}`} className='rainbowLetter'>
+      {ch}
+    </span>
+  ));
 
   return <div className={`rainbowText ${className}`}>{createRainbow}</div>;
 };
