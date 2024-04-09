@@ -17,28 +17,32 @@ import { Triangles } from '../Triangles/Triangles';
 import { RainbowText } from '../RainbowText/RainbowText';
 
 type FlashCardProps = {
+  flipCard: (flipState: boolean) => void;
   isActive: boolean;
+  isFlipped: boolean;
   isPrevCard: boolean;
   question: Question;
   onRadioChange: (isAnswerCorrect: boolean) => void;
+  selectAnswer: (answer: number) => void;
+  selectedAnswer: number | null;
 };
 
 export const FlashCard = ({
+  flipCard,
   isActive,
+  isFlipped,
   isPrevCard,
   onRadioChange,
   question,
+  selectAnswer,
+  selectedAnswer,
 }: FlashCardProps) => {
-  const [selectedAnswer, setSelectedAnswer] = React.useState<number | null>(
-    null
-  );
-  const [isFlipped, setIsFlipped] = React.useState(false);
   const [type, setType] = React.useState<'success' | 'error'>();
 
   const onCheckAnswer = (e: React.ChangeEvent<HTMLInputElement>) => {
     const answer = +e.target.value;
-    setSelectedAnswer(answer);
-    setIsFlipped(true);
+    selectAnswer(answer);
+    flipCard(true);
 
     if (+answer === question.correctAnswer) {
       setType('success');

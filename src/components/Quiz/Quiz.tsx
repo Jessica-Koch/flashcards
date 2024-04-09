@@ -9,12 +9,22 @@ import { RainbowText } from '../RainbowText/RainbowText';
 export const Quiz = () => {
   const [activeCardIndex, setActiveCardIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
+  const [selectedAnswer, setSelectedAnswer] = React.useState<number | null>(
+    null
+  );
+  const [isFlipped, setIsFlipped] = React.useState(false);
+
+  const flipCard = (flipState: boolean) => setIsFlipped(flipState);
 
   const onClickNext = () => {
+    setSelectedAnswer(null);
+    flipCard(false);
     setActiveCardIndex((prev: number) => prev + 1);
   };
 
   const onClickReset = () => {
+    setSelectedAnswer(null);
+    flipCard(false);
     setActiveCardIndex(0);
     setScore(0);
   };
@@ -25,6 +35,10 @@ export const Quiz = () => {
     }
   };
 
+  const selectAnswer = (answer: number) => {
+    setSelectedAnswer(answer);
+  };
+
   return (
     <div className='quiz'>
       <></>
@@ -33,9 +47,13 @@ export const Quiz = () => {
       <div className='quizQuestions'>
         {QUESTION_BANK.map((q, i) => (
           <FlashCard
+            flipCard={flipCard}
             isActive={activeCardIndex === i}
+            isFlipped={isFlipped}
             isPrevCard={activeCardIndex - 1 === i}
             question={q}
+            selectAnswer={selectAnswer}
+            selectedAnswer={activeCardIndex === i ? selectedAnswer : null}
             key={`${q.question}-${i}`}
             onRadioChange={onClickAnswer}
           />
