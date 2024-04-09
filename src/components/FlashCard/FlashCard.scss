@@ -46,7 +46,6 @@
 
 .options {
   padding: 5px 0;
-  font-size: 24px;
 }
 
 .cardFace {
@@ -204,12 +203,25 @@
   transform: rotate(180deg);
 }
 
+@container (min-height: 700px) {
+  .scene {
+    height: 700px;
+    width: 500px;
+
+    .question {
+      font-size: 36px;
+    }
+    .radio {
+      font-size: 24px;
+    }
+  }
+}
 @container (max-height: 700px) {
   .scene {
     height: 650px;
     width: 400px;
 
-    h1 {
+    .question {
       font-size: 30px;
     }
   }
@@ -220,11 +232,12 @@
     height: 500px;
     width: 500px;
 
-    h1 {
+    .question {
       font-size: 30px;
     }
   }
 }
+
 @keyframes slidein {
   from {
     opacity: 0;
