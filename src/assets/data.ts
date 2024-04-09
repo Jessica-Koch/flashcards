@@ -26,7 +26,7 @@ export const QUESTION_BANK: Question[] = [
    {
     question: "What is a telomere?",
     options: [
-      'A method of magnification', 'A region of repetitive DNA which protects teh end of a chromosome', 'A tear in spacetime, commonly known as a worm-hole', 'Perturbations in the Earth\'s orbit'
+      'A method of magnification', 'A region of repetitive DNA which protects the end of a chromosome', 'A tear in spacetime, commonly known as a worm-hole', 'Perturbations in the Earth\'s orbit'
     ],
     correctAnswer: 1
   },
