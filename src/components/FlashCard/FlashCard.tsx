@@ -104,7 +104,12 @@ export const FlashCard = ({
             <div className='footer'>
               <div className='results'>
                 {type === 'error' ? (
-                  `The correct answer was ${question.options[question.correctAnswer]}`
+                  <>
+                    The correct answer was{' '}
+                    <span className='correctAnswer'>
+                      {question.options[question.correctAnswer]}
+                    </span>
+                  </>
                 ) : (
                   <RainbowText className='resultRainbow' text='Congrats!' />
                 )}

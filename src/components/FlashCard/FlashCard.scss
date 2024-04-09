@@ -141,6 +141,10 @@
   height: 1.5em;
 }
 
+.correctAnswer {
+  color: $red;
+}
+
 .error {
   .icon,
   .floatingIcons {
