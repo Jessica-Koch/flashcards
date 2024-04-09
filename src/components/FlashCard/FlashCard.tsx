@@ -48,12 +48,12 @@ export const FlashCard = ({
       onRadioChange(false);
     }
   };
-  const onclick = () => setIsFlipped(!isFlipped);
+
   return (
     <div
       className={`scene ${isActive ? 'slideIn' : ''}  ${isPrevCard ? 'slideOut' : ''} `}
     >
-      <div onClick={onclick} className={`flashCard ${isFlipped && 'flipped'}`}>
+      <div className={`flashCard ${isFlipped && 'flipped'}`}>
         <div className='cardFace front borders'>
           <div className='cardContent'>
             <NestedCircles className='bottom' color={Color.PURPLE} />
