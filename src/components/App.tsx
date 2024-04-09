@@ -1,4 +1,5 @@
 import './App.scss';
+
 import { Quiz } from './Quiz/Quiz';
 
 function App() {

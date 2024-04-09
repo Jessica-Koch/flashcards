@@ -4,7 +4,7 @@
   border-radius: 100%;
 }
 
-.red {
+.redConcentricCircles {
   background-image: radial-gradient(
     circle,
     transparent 48px,
@@ -18,7 +18,7 @@
     transparent 147px
   );
 }
-.orange {
+.orangeConcentricCircles {
   background-image: radial-gradient(
     circle,
     transparent 48px,
@@ -32,7 +32,7 @@
     transparent 147px
   );
 }
-.yellow {
+.yellowConcentricCircles {
   transform: scale(0.75);
   background-image: radial-gradient(
     circle,
@@ -48,7 +48,7 @@
   );
 }
 
-.green {
+.greenConcentricCircles {
   background-image: radial-gradient(
     circle,
     transparent 48px,
@@ -62,7 +62,7 @@
     transparent 147px
   );
 }
-.blue {
+.blueConcentricCircles {
   background-image: radial-gradient(
     circle,
     transparent 48px,
@@ -76,7 +76,7 @@
     transparent 147px
   );
 }
-.purple {
+.purpleConcentricCircles {
   background-image: radial-gradient(
     circle,
     transparent 48px,

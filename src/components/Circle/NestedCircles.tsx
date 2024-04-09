@@ -7,5 +7,9 @@ type NestedCircleProps = {
 };
 
 export const NestedCircles = ({ color, className }: NestedCircleProps) => {
-  return <div className={`nestedCircles ${color} ${className}`}></div>;
+  return (
+    <div
+      className={`nestedCircles ${color}ConcentricCircles ${className}`}
+    ></div>
+  );
 };

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Color, Question } from '../../assets/types';
 
 import './FlashCard.scss';
@@ -14,6 +13,9 @@ import {
 import { Radio } from '../Radio/Radio';
 import React from 'react';
 import { NestedCircles } from '../Circle/NestedCircles';
+import { Triangles } from '../Triangles/Triangles';
+import { RainbowText } from '../RainbowText/RainbowText';
+
 type FlashCardProps = {
   isActive: boolean;
   isPrevCard: boolean;
@@ -27,9 +29,11 @@ export const FlashCard = ({
   onRadioChange,
   question,
 }: FlashCardProps) => {
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [type, setType] = useState<'success' | 'error'>();
+  const [selectedAnswer, setSelectedAnswer] = React.useState<number | null>(
+    null
+  );
+  const [isFlipped, setIsFlipped] = React.useState(false);
+  const [type, setType] = React.useState<'success' | 'error'>();
 
   const onCheckAnswer = (e: React.ChangeEvent<HTMLInputElement>) => {
     const answer = +e.target.value;
@@ -54,7 +58,7 @@ export const FlashCard = ({
           <div className='cardContent'>
             <NestedCircles className='bottom' color={Color.PURPLE} />
             <NestedCircles className='right' color={Color.YELLOW} />
-            <h2>{question.question}</h2>
+            <div className='question'>{question.question}</div>
             <div className='options'>
               {question.options.map((opt, i) => (
                 <div key={`${i}-${opt}`}>
@@ -69,33 +73,39 @@ export const FlashCard = ({
             </div>
           </div>
         </div>
-        <div className='cardFace back'>
-          <div className={`header ${type}`}>
-            <div className='floatingIcons upper'>
-              <Sparkle />
-              <Hexagon className='iconLarge' />
-              {type === 'error' ? <Circle /> : <Star />}
+        <div className='cardFace back borders'>
+          <div className='cardContent backCardContent'>
+            <div className={`header ${type}`}>
+              <div className='floatingIcons upper'>
+                {type === 'error' ? <Triangle /> : <Sparkle />}
+                <Hexagon className='iconLarge' />
+                {type === 'error' ? <Circle /> : <Star />}
+              </div>
+              <div className='circle outer'>
+                <div className='circle inner'>
+                  {type === 'error' ? (
+                    <OctagonAlert className='icon' />
+                  ) : (
+                    <CircleCheckBig className='icon' />
+                  )}
+                </div>
+              </div>
+              <div className='floatingIcons lower'>
+                <Circle className='iconLarge' />
+              </div>
+              <Triangles
+                className={`cardTriangles ${type === 'error' ? 'downTriangles' : 'upTriangles'}`}
+              />
             </div>
-            <div className='circle outer'>
-              <div className='circle inner'>
+            <div className='footer'>
+              <div className='results'>
                 {type === 'error' ? (
-                  <OctagonAlert className='icon' />
+                  `The correct answer was ${question.options[question.correctAnswer]}`
                 ) : (
-                  <CircleCheckBig className='icon' />
+                  <RainbowText className='resultRainbow' text='Congrats!' />
                 )}
               </div>
             </div>
-            <div className='floatingIcons lower'>
-              <Circle className='iconLarge' />
-              <Triangle />
-            </div>
-          </div>
-          <div className='footer'>
-            <h1>
-              {type === 'error'
-                ? `The correct answer was ${question.options[question.correctAnswer]}`
-                : 'Congrats!'}
-            </h1>
           </div>
         </div>
       </div>

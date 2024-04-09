@@ -1,0 +1,51 @@
+.triangles {
+  display: flex;
+  flex-direction: column;
+
+  .triangle {
+    width: 2em;
+    aspect-ratio: 1 / cos(30deg);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
+
+  .triangleHollow {
+    --b: 5px; /* control the border thickness */
+
+    width: 2em;
+    aspect-ratio: 1 / cos(30deg);
+    clip-path: polygon(
+      50% 0,
+      100% 100%,
+      0 100%,
+      50% 0,
+      50% var(--b),
+      calc(var(--b) * cos(30deg)) calc(100% - var(--b) / 2),
+      calc(100% - var(--b) * cos(30deg)) calc(100% - var(--b) / 2),
+      50% var(--b)
+    );
+  }
+
+  .redTriangle {
+    background: $pastelRed;
+  }
+
+  .orangeTriangle {
+    background: $peach;
+  }
+
+  .yellowTriangle {
+    background: $pastelYellow;
+  }
+
+  .greenTriangle {
+    background: $pastelGreen;
+  }
+
+  .blueTriangle {
+    background: $pastelBlue;
+  }
+
+  .purpleTriangle {
+    background: $pastelPurple;
+  }
+}

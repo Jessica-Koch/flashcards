@@ -40,9 +40,13 @@
   padding: 15px 20px;
   text-align: left;
 }
+.question {
+  font-size: 36px;
+}
 
 .options {
-  font-font-size: 20px;
+  padding: 5px 0;
+  font-size: 24px;
 }
 
 .cardFace {
@@ -54,16 +58,17 @@
 }
 
 .back {
-  align-items: center;
   background-color: $white;
-  border-radius: 10px;
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+.backCardContent {
+  grid-template-rows: 3fr 2fr;
+  align-items: center;
   color: $black;
   display: grid;
-  transform: rotateY(180deg) translateZ(1px);
-  grid-template-rows: 3fr 2fr;
   justify-content: center;
-  padding: 15px;
-  position: relative;
+  padding: 0;
 }
 
 .success {
@@ -99,7 +104,6 @@
 }
 
 .footer {
-  background: $white;
   text-align: center;
 }
 
@@ -181,6 +185,42 @@
   top: 63px;
 }
 
+.results {
+  font-size: 2em;
+}
+.resultRainbow {
+  font-size: 50px;
+}
+.cardTriangles {
+  position: absolute;
+  right: 29px;
+  bottom: -29px;
+}
+.downTriangles {
+  transform: rotate(180deg);
+}
+
+@container (max-height: 700px) {
+  .scene {
+    height: 650px;
+    width: 400px;
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+}
+
+@container (max-height: 450px) {
+  .scene {
+    height: 500px;
+    width: 500px;
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+}
 @keyframes slidein {
   from {
     opacity: 0;
